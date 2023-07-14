@@ -18,15 +18,11 @@ const LoginPage = () => {
         e.preventDefault();
         // Check if the entered email and password match the stored user in local storage     
         const storedUser = JSON.parse(localStorage.getItem('user'));
-        if(storedUser &&
-            storedUser.email === email && storedUser.password === password){
+        if((storedUser &&
+            storedUser.email === email && storedUser.password === password) || (email === "ShoppingMart" && password ==="Mart@123") ){
                 dispatch(login(storedUser));                
                 navigate('/home');
                 toast.success('😃Login Successful')
-            }
-           else if(email === "ShoppingMart" && password ==="Mart@123"){
-          navigate('/home');
-          toast.success('😃Login Successful')
         }else{
               toast.error('😢Invalid username or password')
             }
