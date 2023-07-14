@@ -23,9 +23,9 @@ const SignUpPage = () => {
     const newUser = { email, password, confirmPassword };
     localStorage.setItem('user', JSON.stringify(newUser));
     dispatch(register(newUser));
-    console.log(newUser);
     if(password === confirmPassword) {
       toast.success('😊Registration successful');
+      toast.success('😊Now you can login and get your products');
       navigate('/');
     }else{
       toast.error('🫡Please check your Password & Confirm Password')
