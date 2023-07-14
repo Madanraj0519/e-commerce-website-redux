@@ -24,7 +24,7 @@ const LoginPage = () => {
                 navigate('/home');
                 toast.success('😃Login Successful')
             }
-        if(email === "ShoppingMart" && password ==="Mart@123"){
+           else if(email === "ShoppingMart" && password ==="Mart@123"){
           navigate('/home');
           toast.success('😃Login Successful')
         }else{
