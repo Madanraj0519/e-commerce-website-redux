@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "./Category.scss"
 import {categoryImage} from "../../utils/image"
 
@@ -15,7 +16,7 @@ const Category = () => {
             <div className = "category-items grid">
                 {
                     categoryImage.map(category => (
-                        
+                        <Link to = {`${category.category}`} key = {category.id}>
                             <div className = "category-item" >
                                 <div className='category-item-img'>
                                     <img src = {category.image} alt = "" />
@@ -24,6 +25,7 @@ const Category = () => {
                                     <h6 className='fs-20'>{category.title}</h6>
                                 </div>
                             </div>
+                        </Link>
                     ))
                 }
                 
